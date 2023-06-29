@@ -1,4 +1,4 @@
-@import url("/assets/font/stylesheet.css");
+@import url("../font/stylesheet.css");
 
 html {
     font-family: 'Muller', sans-serif;
@@ -6,9 +6,10 @@ html {
     line-height: 1.5;
 }
 
-body, p, h1, h2, h3, h4, h5, h6, div, ul {
+body, p, h1, h2, h3, h4, h5, h6, div, ul, a {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 a {
@@ -54,7 +55,7 @@ ul {
     line-height: 1.1;
 }
 
-.menu {
+.menu__list {
     color: #a46b00;
     display: flex;
     gap: 55px;
@@ -76,6 +77,8 @@ ul {
     }
     .header__menu {
         margin-left: 80px;
+    }
+    .menu__list {
         gap: 40px;
     }
 }
@@ -84,10 +87,52 @@ ul {
     .container {
         max-width: 540px;
     }
+    .header__container {
+        justify-content: space-between;
+    }
+    .menu {
+        position: relative;
+    }
+    .menu__burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 30px;
+        height: 20px;
+    }
+    .menu__burger div {
+        width: 100%;
+        height: 3px;
+        background-color: #ffc468;
+    }
+    .menu__list {
+        position: absolute;
+        background-color: #fff;
+        flex-direction: column;
+        gap: 20px;
+        width: 40vw;
+        right: 0;
+        box-shadow: none;
+        top: 50px;
+        max-height: 0;
+        padding: 0 16px;
+        transition: all .2s;
+        overflow: hidden;
+    }
+    .menu__list-opened {
+        max-height: 300px;
+        padding: 16px;
+        box-shadow: 0 3px 3px 1px rgba(152, 152, 152, 0.2);
+    }
 }
 
 @media screen and (max-width: 576px) {
     .container {
         max-width: none;
+    }
+    .menu__list {
+        width: 100vw;
+        right: -5vw;
     }
 }
