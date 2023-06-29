@@ -69,6 +69,10 @@ img {
     margin-top: 126px;
 }
 
+.main__catalog {
+    margin-top: 150px;
+}
+
 .first {
     display: flex;
     align-items: center;
@@ -136,6 +140,69 @@ img {
     cursor: pointer;
 }
 
+.button-width_full {
+    width: 100%;
+}
+
+.button-height_min {
+    height: 50px;
+}
+
+.catalog__title {
+    font-size: 2.18rem;
+    color: #bd975c;
+    text-align: center;
+}
+
+.catalog__cards {
+    margin-top: 48px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.catalog__card {
+    width: calc(25% - 18px);
+}
+
+.card {
+    padding: 29px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 14px 1px rgba(152, 152, 152, 0.2);
+    text-align: center;
+}
+
+.card__title {
+    color: #382400;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.card__text {
+    color: #181a1a;
+    font-size: 0.875em;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+.card__img {
+    height: 146px;
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 @media screen and (max-width: 1280px) {
     .container {
         max-width: 960px;
@@ -153,7 +220,7 @@ img {
         max-width: 400px;
         position: absolute;
         top: 0;
-        right: -50px;
+        right: 0;
     }
     .first__left {
         width: 580px;
@@ -170,6 +237,9 @@ img {
     .menu__list {
         gap: 40px;
     }
+    .main__catalog {
+        margin-top: 280px;
+    }
     .first__left {
         width: 100%;
     }
@@ -180,6 +250,9 @@ img {
     }
     .first {
         flex-direction: column;
+    }
+    .catalog__card {
+        width: calc(50% - 24px)
     }
 }
 
@@ -228,6 +301,9 @@ img {
     .main__first {
         margin-top: 100px;
     }
+    .main__catalog {
+        margin-top: 200px;
+    }
     .first__title {
         font-size: 2.4rem;
     }
@@ -235,6 +311,15 @@ img {
         bottom: -120px;
         max-width: 300px;
         right: -20px;
+    }
+    .catalog__title {
+        font-size: 2rem;
+    }
+    .catalog__card {
+        width: calc(50% - 9px);
+    }
+    .catalog__cards {
+        gap: 18px;
     }
 }
 
@@ -250,17 +335,29 @@ img {
     .main__first {
         margin-top: 60px;
     }
+    .main__catalog {
+        margin-top: 80px;
+    }
     .first__title {
         font-size: 1.8rem;
     }
     .first__img {
         position: static;
-        margin-top: 20px;
+        margin-top: 60px;
     }
     .advantages {
         flex-direction: column;
     }
     .advantages__item {
         width: 100%;
+    }
+    .catalog__cards {
+        flex-direction: column;
+    }
+    .catalog__card {
+        width: 100%;
+    }
+    .catalog__title {
+        line-height: 1.2;
     }
 }
