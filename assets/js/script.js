@@ -16,13 +16,12 @@ window.onload = function () {
 
     inputName.on('input', function(){
         this.value = this.value.replace(/\./g, '');
-        checkName()
     });
 
     inputName.on('blur', checkName);
 
     function checkName() {
-        const reg = /[^a-zа-яё\s]/;
+        const reg = /[^a-zA-Zа-яА-ЯёЁ\s]/;
         if(reg.test(inputName.val())) {
             labelName.text('Введите только буквы');
             flagName = true;
@@ -40,8 +39,6 @@ window.onload = function () {
     const labelAddress = $('#labelAddress');
     let flagAddress  = true;
     let address = ''
-
-    inputAddress.on('input', checkAddress);
 
     inputAddress.on('blur', checkAddress);
 
@@ -61,14 +58,12 @@ window.onload = function () {
     let flagPhone  = true;
     let phone = ''
 
-    inputPhone.on('input', checkPhone);
-
     inputPhone.on('blur', checkPhone);
 
     function checkPhone() {
-        const reg = /^[0-9-]/;
+        const reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
         if(!reg.test(inputPhone.val())) {
-            labelPhone.text('Введите телефон');
+            labelPhone.text('Введите корректный телефон');
             flagPhone = true;
         } else if(!inputPhone.val()) {
             labelPhone.text('Введите телефон');
