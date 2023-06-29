@@ -1,5 +1,6 @@
 window.onload = function () {
     new WOW().init();
+    lightbox.init();
 
     const menuButton = $('.menu__burger');
     const menuList = $('.menu__list');
