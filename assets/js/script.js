@@ -123,4 +123,9 @@ window.onload = function () {
     popup.on('click', function (e) {
         e.stopPropagation();
     })
+
+    $("body").on('click', '[href*="#"]', function(e){
+        $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top }, 300);
+        e.preventDefault();
+    });
 }

@@ -141,7 +141,7 @@ img {
 .button {
     padding: 0 50px;
     height: 60px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: #020303;
