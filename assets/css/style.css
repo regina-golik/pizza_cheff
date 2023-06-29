@@ -264,7 +264,6 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 24px;
     width: 330px;
 }
 
@@ -279,6 +278,15 @@ img {
 
 .form__input::placeholder {
     color: #cba86e;
+}
+
+.form__button {
+    margin-top: 24px;
+}
+
+.form__label {
+    color: #181a1a;
+    height: 24px;
 }
 
 @media screen and (max-width: 1460px) {
