@@ -5,4 +5,6 @@ window.onload = function () {
     menuButton.on('click', function () {
         menuList.toggleClass('menu__list-opened')
     })
+
+    new WOW().init();
 }

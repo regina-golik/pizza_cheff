@@ -60,9 +60,17 @@ img {
 }
 
 .menu__list {
-    color: #a46b00;
     display: flex;
     gap: 55px;
+}
+
+.menu__item {
+    color: #a46b00;
+    transition: color .2s;
+}
+
+.menu__item:hover {
+    color: #ffaf18;
 }
 
 .main__first {
@@ -143,6 +151,11 @@ img {
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color .2s;
+}
+
+.button:hover {
+    background-color: #ffc468;
 }
 
 .button-width_full {
