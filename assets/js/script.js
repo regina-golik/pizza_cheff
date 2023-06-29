@@ -15,13 +15,10 @@ window.onload = function () {
 
     inputName.on('input', function(){
         this.value = this.value.replace(/\./g, '');
-
         checkName()
     });
 
-    inputName.on('blur', function(){
-        checkName()
-    });
+    inputName.on('blur', checkName);
 
     function checkName() {
         const reg = /[^a-zа-яё\s]/;
@@ -43,13 +40,9 @@ window.onload = function () {
     let flagAddress  = true;
     let address = ''
 
-    inputAddress.on('input', function(){
-        checkAddress()
-    });
+    inputAddress.on('input', checkAddress);
 
-    inputAddress.on('blur', function(){
-        checkAddress()
-    });
+    inputAddress.on('blur', checkAddress);
 
     function checkAddress() {
         if(!inputAddress.val()) {
@@ -67,13 +60,9 @@ window.onload = function () {
     let flagPhone  = true;
     let phone = ''
 
-    inputPhone.on('input', function(){
-        checkPhone()
-    });
+    inputPhone.on('input', checkPhone);
 
-    inputPhone.on('blur', function(){
-        checkPhone()
-    });
+    inputPhone.on('blur', checkPhone);
 
     function checkPhone() {
         const reg = /^[0-9-]/;
@@ -93,7 +82,9 @@ window.onload = function () {
     const buttonOrder = $('#buttonOrder');
     const url = 'pizza-cheff/order'
 
-    buttonOrder.on('click', function () {
+    const wrapper = $('.wrapper');
+
+    buttonOrder.on('click', async function () {
         checkName();
         checkAddress();
         checkPhone();
@@ -103,11 +94,32 @@ window.onload = function () {
                 address,
                 phone
             }
-            $.ajax({
+
+            await $.ajax({
                 type: "POST",
                 url: url,
                 data: data,
+                success: function(data,status,xhr){
+                    wrapper.addClass('wrapper-opened')
+                },
+                error: function(xhr, status, error){
+                    wrapper.addClass('wrapper-opened')
+                },
             });
+
         }
+    })
+
+    const popupCloseButton = $('.popup__close');
+    const popup = $('.popup');
+
+    function closePopup() {
+        wrapper.removeClass('wrapper-opened');
+    }
+
+    popupCloseButton.on('click', closePopup)
+    wrapper.on('click', closePopup)
+    popup.on('click', function (e) {
+        e.stopPropagation();
     })
 }

@@ -289,6 +289,47 @@ img {
     height: 24px;
 }
 
+.wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.wrapper-opened {
+    display: flex;
+}
+
+.popup {
+    background-color: #fff;
+    min-width: 30vw;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.popup__text {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.popup__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1460px) {
     .block-with-form__img {
         right: 0;
@@ -493,5 +534,8 @@ img {
     }
     .block-with-form__title {
         line-height: 1.2;
+    }
+    .popup__text {
+        font-size: 1.5rem;
     }
 }
